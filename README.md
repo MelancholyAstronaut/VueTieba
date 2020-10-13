@@ -1,24 +1,8 @@
-# tieba
+# 一个基于Vue实现的简易贴吧 
+---
+如何启动?
+1.  `git clone git@github.com:MelancholyAstronaut/VueTieba.git`
+2.  `yarn serve`
+3.  访问 `localhost:8080`
+---
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
