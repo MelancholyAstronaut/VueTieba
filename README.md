@@ -2,7 +2,8 @@
 ---
 如何启动?
 1.  `git clone git@github.com:MelancholyAstronaut/VueTieba.git`
-2.  `yarn serve`
-3.  访问 `localhost:8080`
+2.  `yarn add`
+3.  `yarn serve`
+4.  访问 `localhost:8080`
 ---
 
