@@ -1,12 +1,11 @@
 <template>
   <div id="head-vue" style="display: flex;justify-content: flex-end">
     <div style="margin-right:20px">
-      <img src="../../assets/头像.jpg" alt="" class="headPic">
+      <slot></slot>
     </div>
     <div class="test01">
-      <button type="button" class="btn  btn-info dropdown-toggle btn-sm" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="margin-right: 50px" id="myBtn"
-              @mouseover="toggleBtn_in">
+      <button type="button" class="btn  btn-outline-dark dropdown-toggle btn-sm" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="margin-right: 50px" id="myBtn">
         个人设置
       </button>
       <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuLink">
@@ -23,13 +22,7 @@
 
 export default {
   name: "head-vue",
-  methods: {
-    toggleBtn_in: function (event) {
-      event.preventDefault();
-      event.stopPropagation()
-      $('.dropdown-toggle').dropdown("toggle")
-    }
-  },
+  methods: {},
   created: function () {
 
   }
@@ -51,5 +44,9 @@ export default {
 
 div a {
   background-color: aliceblue;
+}
+
+#myBtn {
+  transition: .7s;
 }
 </style>

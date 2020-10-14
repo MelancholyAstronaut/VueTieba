@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <HeadVue>
+      <div>头像区域</div>
+    </HeadVue>
+    <router-view />
   </div>
 </template>
 <script>
+import HeadVue from "@/components/public/head-vue";
 export default {
   name: 'App',
-  data: function () {
-    return {
-      msg: "hello"
-    }
-  },
-  methods: {}
+  components: {HeadVue}
 }
 </script>
 

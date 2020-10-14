@@ -11,14 +11,17 @@
           <label for="exampleInputPassword1"></label>
           <input type="password" class="form-control col-md-12" id="exampleInputPassword1" placeholder="密码">
         </div>
-        <router-link to="index" replace>
-          <button type="button" class="btn btn-primary" @click="submit">Submit</button>
+        <router-link to="/" replace>
+          <button type="button" class="btn btn-primary col-md-2" @click="submit">登录</button>
         </router-link>
         <div id="submitWrapper">
-          <small>忘记密码</small>
-          <small>注册</small>
+          <router-link to="/admin/forget-password">
+            <a class="forget-password btn">忘记密码</a>
+          </router-link>
+          <router-link to="/admin/reg-link">
+            <a class="reg-link btn">注册</a>
+          </router-link>
         </div>
-
       </form>
     </div>
   </div>
@@ -30,18 +33,22 @@ export default {
   methods: {
     submit: function (event) {
       //查数据库
-
     }
   }
 }
 
 </script>
 
-<style scoped >
+<style scoped>
+/*#loginVue{*/
+/*  width: 100%;*/
+/*  height: 738px;*/
+/*  background: #bc8f8f;*/
+/*}*/
 .loginDiv {
   width: 356px;
   height: 410px;
-  border: beige solid 2px;
+  /*border: beige solid 2px;*/
   position: absolute;
   left: 50%;
   top: 50%;
@@ -49,7 +56,7 @@ export default {
 }
 
 .btn-primary {
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100%;
   height: 40px;
   background-color: #3f89ec;
@@ -67,9 +74,14 @@ input {
 }
 
 #submitWrapper {
-  font-size: 20px;
-  margin-top: 10px;
+  background-color: #f0f6ff;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
+}
+
+.forget-password, .reg-link {
+  font-size: 12px;
+  margin-top: 12px;
 }
 </style>
