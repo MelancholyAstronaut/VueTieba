@@ -13,10 +13,8 @@ export default new Router({
     mode: "history",
     routes: [
         {path: "/index", component: indexVue},
-        {path: "/:num1/:num2", component: mainVue},
+        {path: "/", component: mainVue},
         {path: "/login", component: login},
-        {path: "/view", component: login}
-
     ]
 })
 
