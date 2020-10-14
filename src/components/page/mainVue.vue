@@ -23,7 +23,9 @@
       <div class="good_rcmd" id="good_rcmd">
         <span>S10全球总决赛</span>
       </div>
-      <div class="good_forum_list clearfix"></div>
+      <div class="good_forum_list clearfix">
+
+      </div>
     </div>
   </div>
 
