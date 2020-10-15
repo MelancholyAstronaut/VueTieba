@@ -3,17 +3,18 @@
     <HeadVue>
       <div>头像区域</div>
     </HeadVue>
-    <router-view />
+    <router-view/>
   </div>
 </template>
 <script>
 import HeadVue from "@/components/public/head-vue";
+
 export default {
   name: 'App',
-  components: {HeadVue}
+  components: {HeadVue},
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 
 </style>
