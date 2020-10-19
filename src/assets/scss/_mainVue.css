@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+img {
+  border: 0;
+  border-radius: 5px;
+}
+
+.mainVue {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.forum_recommend {
+  width: 778px;
+  height: 274px;
+  border: 1px solid #D7D7D7;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+.forum_recommend span {
+  line-height: 38px;
+  font-size: 16px;
+}
+.forum_recommend .good_forum_list {
+  width: 760px;
+  height: 74px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.forum_recommend .good_forum_list .good_rcmd_center {
+  width: 760px;
+  height: 72px;
+}
+.forum_recommend .good_forum_list .good_rcmd_center + a {
+  margin-left: 3px;
+}
+.forum_recommend .good_forum_list .good_rcmd_center ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.forum_recommend .good_forum_list .good_rcmd_center ul li {
+  list-style: none;
+}
+.forum_recommend .good_forum_list .good_rcmd_center ul li a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #444444;
+  display: block;
+  width: 200px;
+  height: 69px;
+  background-color: #FCFCFC;
+  border: 1px solid #D6D6D6;
+  border-radius: 3px;
+  box-shadow: #3f89ec;
+}
+.forum_recommend .good_forum_list .good_rcmd_center ul li a .gf_desc {
+  overflow: hidden;
+  float: right;
+  margin: -15px 68px 0 0;
+}
+
+.rcmd_forumList {
+  float: left;
+  margin-top: 1px;
+  width: 375px;
+}
+
+.rcmd_forum_img {
+  display: block;
+  float: left;
+  height: 95px;
+}
+
+#rcmd_forum_desc {
+  float: left;
+  width: 230px;
+  margin-left: 14px;
+}
+#rcmd_forum_desc .rcmd_f_name {
+  padding-left: 44px;
+  padding-top: -20px;
+}
+#rcmd_forum_desc .rcmd_f_name a {
+  text-decoration: none;
+  color: #005196;
+  font-size: 20px;
+  font-family: STHeiti, "Microsoft Yahei", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 20px;
+}
+#rcmd_forum_desc .rcmd_f_num {
+  margin-top: -11px;
+}
+#rcmd_forum_desc .rcmd_f_reason {
+  padding-left: 0;
+  color: #666;
+  line-height: 20px;
+  margin-top: -13px;
+  height: 20px;
+  overflow: hidden;
+}
+#rcmd_forum_desc .good_rcmd {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=_mainVue.css.map */

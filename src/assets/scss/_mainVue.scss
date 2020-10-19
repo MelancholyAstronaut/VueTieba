@@ -1,0 +1,161 @@
+$img_url: url("../../../public/sprits.png");
+
+@mixin DivCenter {
+  margin: 0 auto;
+}
+
+* {
+  //box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+img {
+  border: 0;
+  border-radius: 5px;
+}
+
+.mainVue {
+  width: 1000px;
+  @include DivCenter
+}
+
+.forum_recommend {
+  width: 778px;
+  height: 274px;
+  border: 1px solid #D7D7D7;
+  margin: 10px auto;
+  padding: 0 10px;
+
+  span {
+    line-height: 38px;
+    font-size: 16px;
+  }
+
+  .good_forum_list {
+    @include DivCenter;
+    width: 760px;
+    height: 74px;
+    display: flex;
+    justify-content: space-between;
+
+    .good_rcmd_center {
+      width: 760px;
+      height: 72px;
+
+      & + a {
+        margin-left: 3px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+          list-style: none;
+
+          a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #444444;
+            display: block;
+            width: 200px;
+            height: 69px;
+            background-color: #FCFCFC;
+            border: 1px solid #D6D6D6;
+            border-radius: 3px;
+            box-shadow: #3f89ec;
+
+            .gf_desc {
+              //border: #3f89ec 2px solid;
+              overflow: hidden;
+              float: right;
+              margin: -15px 16px 0 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.rcmd_forumList {
+
+  float: left;
+  margin-top: 1px;
+  width: 375px;
+}
+
+.rcmd_forum_img {
+  display: block;
+  float: left;
+  height: 95px;
+}
+
+#rcmd_forum_desc {
+  float: left;
+  width: 230px;
+  margin-left: 14px;
+
+  .rcmd_f_name {
+    background: $img_url no-repeat scroll -140px 0 transparent;
+    padding-left: 44px;
+    padding-top: -20px;
+
+    a {
+      text-decoration: none;
+      color: #005196;
+      font-size: 16px;
+      font-family: STHeiti, "Microsoft Yahei", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 20px;
+      background-color: transparent;
+    }
+  }
+
+  .rcmd_f_num {
+    margin-top: -11px;
+
+    .rcmd_f_p_num {
+      background: $img_url no-repeat scroll 0 1px transparent;
+      //font-family: Tahoma;
+      color: #999;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .rcmd_f_n_num {
+      background: $img_url no-repeat scroll 0 -33px transparent;
+      color: #999;
+      padding-left: 20px;
+      font-size: 14px;
+      margin-left: 20px;
+    }
+  }
+
+  .rcmd_f_reason {
+    padding-left: 0;
+    color: #666;
+    line-height: 20px;
+    margin-top: -13px;
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .good_rcmd {
+    margin-top: 10px;
+  }
+}
