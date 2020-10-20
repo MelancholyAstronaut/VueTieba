@@ -7,6 +7,7 @@ Vue.use(Router);
 import indexVue from "../components/index";
 import mainVue from "../components/page/mainVue";
 import login from "@/components/admin/login";
+import App from "@/App";
 
 
 export default new Router({
