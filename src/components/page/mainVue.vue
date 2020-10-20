@@ -4,7 +4,7 @@
       <span class="class_title" style="display: block">推荐贴吧</span>
       <div v-for="curr in rcmd_fornum_list" :key="curr.id" class="rcmd_forumList clearfix">
         <a v-bind:href="curr.url" class="rcmd_forum_img">
-          <img :src='curr.img_url' style="width: 95px;height: 95px;" alt="xxx"/>
+          <img :src='curr.imgUrl' style="width: 95px;height: 95px;" alt="xxx"/>
         </a>
         <div id="rcmd_forum_desc">
           <p class="rcmd_f_name">
@@ -15,10 +15,10 @@
           </p>
           <p class="rcmd_f_num">
             <span class="rcmd_f_p_num">
-              {{ curr.p_num }}
+              {{ curr.pNum }}
             </span>
             <span class="rcmd_f_n_num">
-              {{ curr.t_num }}
+              {{ curr.tNum }}
             </span>
           </p>
         </div>
@@ -38,7 +38,7 @@
           <ul>
             <li class="clearfix" style="width: 200px;" v-for="g_f in gr_f_list.slice(0,3)">
               <a v-bind:href="g_f.url" target="_blank" class="good_forum clearfix">
-                <img :src="g_f.img_url" alt="" width="65" height="65">
+                <img :src="g_f.imgUrl" alt="" width="65" height="65">
                 <div class="gf_desc">
                   <p class="gf_fname">{{ g_f.name }}</p>
 
@@ -48,7 +48,7 @@
                       <path fill-rule="evenodd"
                             d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                     </svg>
-                    {{ g_f.p_num }}
+                    {{ g_f.pNum }}
                   </p>
                 </div>
               </a>
@@ -66,7 +66,6 @@
     </div>
     <newList></newList>
   </div>
-
 </template>
 
 <script>
