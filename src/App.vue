@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <HeadVue>
-      <div>头像区域</div>
-    </HeadVue>
+    <HeadVue></HeadVue>
     <router-view/>
   </div>
 </template>
@@ -15,6 +13,6 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 
 </style>
