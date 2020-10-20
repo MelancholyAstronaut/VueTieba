@@ -3,50 +3,50 @@
     <div style="margin-right:20px">
       <slot></slot>
     </div>
-    <div class="test01">
-      <button type="button" class="btn  btn-outline-dark dropdown-toggle btn-sm" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false" style="margin-right: 50px" id="myBtn">
-        个人设置
-      </button>
-      <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">我的贴吧</a>
-        <a class="dropdown-item" href="#">个人中心</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">退出</a>
+    <div class="header-menu">
+      <a href="#" style="margin-right: 20px">贴吧首页</a>
+      <div class="login">
+        <a v-if="isLogin" @click="logout" href="#">个人信息</a>
+        <a v-if="!isLogin" @click="login" href="#">登录</a>
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
+import {mapMutations, mapState} from "vuex"
+import login from "@/components/admin/login";
 
 export default {
   name: "head-vue",
-  methods: {},
-  created: function () {
+  computed: {
+    ...mapState(['isLogin'])
+  },
+  methods: {
+    //以下两个方法维护了vuex中store.isLogin的更新
+    login: function () {
+      this.$layer.iframe({
+        content: {
+          content: login, //传递的组件对象
+          parent: this,//当前的vue对象
+          data: {info: {a: 1}}//props
+        },
+        area: ['400px', '500px'],
+        title: '百度贴吧',
+      })
+      this.$store.commit("login")
 
-  }
+    },
+    logout: function () {
+      this.$store.commit("logout")
+      this.$layer.msg("退出成功");
+    }
+  },
 
 }
 </script>
 
-<style scoped>
-#head-vue {
-  background-color: bisque;
-  box-shadow: 5px 5px 1px #444;
-}
-
-.headPic {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-div a {
-  background-color: aliceblue;
-}
-
-#myBtn {
-  transition: .7s;
-}
+<style scoped lang="scss">
+@import "src/assets/scss/headVue";
 </style>
