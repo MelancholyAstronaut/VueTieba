@@ -4,7 +4,7 @@
       <slot></slot>
     </div>
     <div class="header-menu">
-      <a href="#" style="margin-right: 20px">贴吧首页</a>
+      <a href="/" style="margin-right: 20px">贴吧首页</a>
       <div class="login">
         <a v-if="isLogin" @click="logout" href="#">个人信息</a>
         <a v-if="!isLogin" @click="login" href="#">登录</a>
@@ -15,14 +15,13 @@
 </template>
 
 <script>
-import {mapMutations, mapState} from "vuex"
+import {mapState} from "vuex"
 import login from "@/components/admin/login";
 
 export default {
   name: "head-vue",
-  computed: {
-    ...mapState(['isLogin'])
-  },
+  computed: mapState(['isLogin']
+  ),
   methods: {
     //以下两个方法维护了vuex中store.isLogin的更新
     login: function () {
@@ -35,15 +34,11 @@ export default {
         area: ['400px', '500px'],
         title: '百度贴吧',
       })
-      this.$store.commit("login")
-
     },
     logout: function () {
-      this.$store.commit("logout")
-      this.$layer.msg("退出成功");
+
     }
   },
-
 }
 </script>
 
