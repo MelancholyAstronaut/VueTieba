@@ -1,20 +1,37 @@
-#head-vue {
-  background-color: bisque;
-  box-shadow: 5px 5px 1px #444;
-}
-
-.headPic {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
-
-div a {
-  background-color: aliceblue;
-}
-.dropdown-item{
+@mixin text-none {
+  color: #000;
+  //text-decoration: none;
   cursor: pointer;
 }
-#myBtn {
-  transition: .7s;
+
+#head-vue {
+  display: block;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background-color: #f8f8f9;
+  margin: 0 auto;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 0 5px #888;
+
+  .header-menu {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    & > a {
+      display: block;
+      @include text-none;
+      margin-right: 47px !important;
+    }
+    .login{
+      width: 117px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .login > a {
+      display: block;
+      @include text-none;
+    }
+  }
 }
