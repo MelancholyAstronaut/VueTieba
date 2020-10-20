@@ -1,6 +1,5 @@
 <template>
   <div class="mainVue clearfix">
-
     <div class="forum_recommend">
       <span class="class_title" style="display: block">推荐贴吧</span>
       <div v-for="curr in rcmd_fornum_list" :key="curr.id" class="rcmd_forumList clearfix">
@@ -65,14 +64,18 @@
         </a>
       </div>
     </div>
+    <newList></newList>
   </div>
+
 </template>
 
 <script>
 
+import newList from "@/components/page/new_list";
 
 export default {
   name: "mainVue",
+  components: {newList},
   data: function () {
     return {
       start: 0,
