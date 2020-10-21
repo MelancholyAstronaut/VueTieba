@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     ...mapMutations(['login']),
-    submit(event) {
+    submit: function (event) {
       if (this.username === null) {
         $("#idInput").focus();
         this.$layer.msg("请填写用户名");
@@ -79,6 +79,8 @@ export default {
       })).then(res => {
         if (res.status === 200 && res.data !== "") {
           this.$layer.msg(`欢迎你 ${res.data.name}`, (layerid) => {
+            this.$parent.$data.username = res.data.name;
+
             this.$layer.close(layerid);
             this.$layer.close(this.layerid);
             window.sessionStorage.setItem("user", qs.stringify(res.data))

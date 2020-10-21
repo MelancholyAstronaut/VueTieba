@@ -15,6 +15,7 @@ export default {
     ...mapState(['isLogin'])
   },
   methods: {
+
     ...mapMutations(['login', 'logout']),
   },
   created: function () {

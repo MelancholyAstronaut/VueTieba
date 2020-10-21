@@ -19,19 +19,22 @@
     display: flex;
     align-items: center;
     margin-right: 30px;
+
     & > a {
       display: block;
       @include text-none;
       margin-right: 47px !important;
     }
-    .login{
+
+    .login {
       width: 117px;
       display: flex;
       justify-content: space-around;
-    }
-    .login > a {
-      display: block;
-      @include text-none;
+
+      a {
+        display: block;
+        @include text-none;
+      }
     }
   }
 }
