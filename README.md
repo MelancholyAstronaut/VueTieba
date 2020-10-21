@@ -6,11 +6,11 @@
 
 ### 技术栈
 
-1. vue
-2. vue-cli
-3. vue-router
-4. bootstarp 4 + scss
-5. yarn
+1. `vue`
+2. `vue-cli`
+3. `vue-router`
+4. `element-ui v2.13.2` + `scss`
+5. `yarn`
 
 ---
 
