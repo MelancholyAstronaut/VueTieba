@@ -1,21 +1,33 @@
 <template>
   <div id="app">
-    <HeadVue></HeadVue>
-    <router-view/>
+    <el-container>
+      <el-row>
+        <el-col :span="24">
+          <HeadVue></HeadVue>
+        </el-col>
+      </el-row>
+      <el-main>
+        <router-view/>
+      </el-main>
+      <el-footer>
+      <foot-vue></foot-vue>
+      </el-footer>
+    </el-container>
   </div>
 </template>
 <script>
 import HeadVue from "@/components/public/head-vue";
+import footVue from "@/components/public/foot-vue";
+
 import {mapState, mapMutations} from "vuex"
 
 export default {
   name: 'App',
-  components: {HeadVue},
+  components: {HeadVue,footVue},
   computed: {
     ...mapState(['isLogin'])
   },
   methods: {
-
     ...mapMutations(['login', 'logout']),
   },
   created: function () {

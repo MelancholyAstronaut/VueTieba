@@ -6,16 +6,14 @@
     <div class="header-menu">
       <a href="/" style="margin-right: 20px">贴吧首页</a>
       <div class="login">
-        <a v-if="isLogin" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-           aria-expanded="false">
-          {{ username }}
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">个人信息</a>
-          <a class="dropdown-item" href="#">消息</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" @click="logout">退出</a>
-        </div>
+        <el-dropdown v-if="isLogin" @command="handleCommand">
+          <span class="el-dropdown-link">{{ username }}</span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>我的信息</el-dropdown-item>
+            <el-dropdown-item>消息</el-dropdown-item>
+            <el-dropdown-item command="logout">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
         <a v-if="!isLogin" @click="login" href="#">登录</a>
       </div>
     </div>
@@ -49,22 +47,36 @@ export default {
         title: '百度贴吧',
       })
     },
-    logout: function (event) {
-      $(".dropdown-menu").dropdown('hide')
-      event.preventDefault();
-      event.stopPropagation();
-      this.$layer.confirm("确认退出嘛.. ", {
-        title: "确定退出"
-      }, (layerid) => {
-        this.$store.commit("logout");
-        console.log("退出成功");
-        this.$layer.close(layerid)
-      });
+    handleCommand(command) {
+      if (command === 'logout') {
+        this.$confirm("确认退出嘛?", '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '退出成功!'
+          });
+          this.$store.commit("logout")
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消退出'
+          });
+        })
+      }
     },
   },
+  created() {
+    var name = window.sessionStorage.getItem("user") || null;
+    this.username = this.qs.parse(name).name
+  }
 }
 </script>
 
 <style scoped lang="scss">
 @import "src/assets/scss/headVue";
+
+
 </style>
