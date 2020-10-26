@@ -76,7 +76,9 @@ export default {
                 center: true,
                 duration: 1000
               });
-              window.sessionStorage.setItem("user", qs.stringify(res.data))
+              // console.log(res.data)
+              window.sessionStorage.setItem("token", res.data.token);
+              window.sessionStorage.setItem("name", res.data.name);
               this.login() //提交登录标记
               this.$layer.close(this.layerid)
             } else if (res.data === "") {

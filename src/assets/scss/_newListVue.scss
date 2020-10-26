@@ -13,7 +13,7 @@
   min-height: 1000px;
   overflow: hidden;
   border: 1px solid #D7D7D7;
-  margin-left: 110px;
+  margin-left: 99px;
 
   .new_list_head {
     width: 550px;
@@ -27,6 +27,7 @@
     ul {
       height: 35px;
       float: left;
+
       li > a {
         & {
           padding: 0 14px;
@@ -34,6 +35,7 @@
           display: inline;
           height: 35px;
         }
+
         background-color: transparent;
         border-bottom: solid 2px #0086c8;
         color: #0086c8;
@@ -50,4 +52,56 @@
 
 ul, li, ol {
   list-style: none;
+}
+
+#n_right {
+  width: 532px;
+}
+
+.title-tag-wraper {
+  margin-bottom: 5px;
+
+  a {
+    text-decoration: none;
+  }
+
+  a, & > a:hover {
+    color: #444;
+  }
+}
+
+.thread-name-wraper {
+  position: relative;
+  .title{
+    position: relative;
+    display: inline-block;
+    font-family: STHeiti,"Microsoft Yahei","Microsoft YaHei",Arial,sans-serif;
+    font-size: 16px;
+    color: #005097;
+    text-decoration: none;
+  }
+}
+.n_text{
+  line-height: 24px;
+  color: #666;
+  font-size: 14px;
+  padding: 14px 0 0;
+}
+.img{
+  width: 532px;
+  li{
+    float: left;
+    display: inline;
+    padding: 0;
+    margin-right: 11px;
+    position: relative;
+  }
+}
+.n_reply{
+  padding-top: 10px;
+  .post_author{
+    color: #999;
+    padding-left: 18px;
+    background: url(//tb2.bdstatic.com/tb/static-spage/img/css1_44fc180.png) no-repeat -198px -69px;
+  }
 }

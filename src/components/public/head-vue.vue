@@ -22,17 +22,18 @@
 </template>
 
 <script>
-import {mapState} from "vuex"
+import {mapMutations, mapState} from "vuex"
 import login from "@/components/admin/login";
 
 export default {
   name: "head-vue",
-  computed: mapState(['isLogin']
+  computed: mapState(['isLogin'],
   ),
   data: () => {
-    return {username: null}
+    return {username: ""}
   },
   methods: {
+    ...mapMutations(["logout"]),
     //以下两个方法维护了vuex中store.isLogin的更新
     login: function (event) {
       event.preventDefault();
@@ -58,7 +59,7 @@ export default {
             type: 'success',
             message: '退出成功!'
           });
-          this.$store.commit("logout")
+          this.logout();
         }).catch(() => {
           this.$message({
             type: 'info',
@@ -69,8 +70,7 @@ export default {
     },
   },
   created() {
-    var name = window.sessionStorage.getItem("user") || null;
-    this.username = this.qs.parse(name).name
+    this.username = window.sessionStorage.getItem("name") || null
   }
 }
 </script>

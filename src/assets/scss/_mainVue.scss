@@ -42,7 +42,7 @@ img {
   margin: 10px auto;
   padding: 0 10px;
 
-  span {
+  .class_title {
     line-height: 38px;
     font-size: 16px;
   }
@@ -157,7 +157,5 @@ img {
     overflow: hidden;
   }
 
-  .good_rcmd {
-    margin-top: 10px;
-  }
+
 }

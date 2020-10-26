@@ -10,7 +10,7 @@
         <router-view/>
       </el-main>
       <el-footer>
-      <foot-vue></foot-vue>
+        <foot-vue></foot-vue>
       </el-footer>
     </el-container>
   </div>
@@ -23,7 +23,7 @@ import {mapState, mapMutations} from "vuex"
 
 export default {
   name: 'App',
-  components: {HeadVue,footVue},
+  components: {HeadVue, footVue},
   computed: {
     ...mapState(['isLogin'])
   },
@@ -31,7 +31,7 @@ export default {
     ...mapMutations(['login', 'logout']),
   },
   created: function () {
-    const isLogin = window.sessionStorage.getItem("user") || false;
+    const isLogin = window.sessionStorage.getItem("name") || false;
     if (isLogin === false) {
       this.logout();
     } else {
