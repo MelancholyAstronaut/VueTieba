@@ -1,6 +1,6 @@
 @mixin text-none {
   color: #000;
-  //text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -16,14 +16,14 @@
   box-shadow: 0 0 5px #888;
 
   .header-menu {
+    width: 250px;
     display: flex;
     align-items: center;
     margin-right: 30px;
-
-    & > a {
+    justify-content: space-around;
+    & a[desc='index'] {
       display: block;
       @include text-none;
-      margin-right: 47px !important;
     }
 
     .login {

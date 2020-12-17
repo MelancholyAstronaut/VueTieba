@@ -9,7 +9,6 @@ const store = new Vuex.Store({
     mutations: {
         login(state) {
             state.isLogin = true;
-            //对于载荷要不要做加盐操作 ?
         },
         logout(state) {
             state.isLogin = false;

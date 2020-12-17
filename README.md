@@ -6,7 +6,7 @@
 
 ### 技术栈
 
-1. `vue`
+1. `vue vuex`
 2. `vue-cli`
 3. `vue-router`
 4. `element-ui v2.13.2` + `scss`
