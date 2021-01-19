@@ -6,11 +6,6 @@
 }
 
 $img_url: url(https://passport.baidu.com/passApi/img/loginlogo.png) no-repeat left;
-.loginDiv {
-  width: 356px;
-  height: 410px;
-  @include center
-}
 
 .btn-primary {
   margin-top: 20px;
@@ -45,11 +40,14 @@ input {
     & {
       color: #2e82ff;
     }
-
     font-size: 15px;
   }
 }
 
 .passwordError {
   border: red solid 2px;
+}
+.footer-desc{
+  display: flex;
+  justify-content: space-between;
 }

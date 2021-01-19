@@ -24,21 +24,17 @@
         <el-dialog
             title="提示"
             :visible.sync="dialogVisible"
-            width="30%"
             :modal=false
+            width="27%"
             :destroy-on-close=true
-            @close='closeDialog()'
         >
           <div slot="title" style="text-align: center">
-            <h3>Tieba Login</h3>
+            <h3>贴吧登录</h3>
           </div>
           <div slot="default">
-            <form-vue>
-            </form-vue>
+            <login-vue></login-vue>
           </div>
-          <div slot="footer" style="display: flex;flex-direction: row-reverse; justify-content: space-between;">
-            <el-button>注册账号</el-button>
-            <el-button>忘记密码</el-button>
+          <div slot="footer">
           </div>
         </el-dialog>
       </div>
@@ -49,12 +45,11 @@
 
 <script>
 import {mapMutations, mapState} from "vuex"
-import login from "@/components/admin/login";
-import formVue from "@/components/public/formVue"
+import loginVue from "@/components/admin/login";
 
 export default {
   name: "head-vue",
-  components: {login, formVue},
+  components: {loginVue},
   computed: mapState(['isLogin'],
   ),
   data: () => {
@@ -70,6 +65,7 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
+          // localStorage.removeItem("name")
           this.$message({
             type: 'success',
             message: '退出成功!'
@@ -83,7 +79,8 @@ export default {
         })
       }
     },
-    closeDialog() {
+    closeMyDialog() {
+      this.$data.dialogVisible = false
     }
   },
   created() {

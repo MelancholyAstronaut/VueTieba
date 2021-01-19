@@ -1,50 +1,29 @@
 <template>
-  <div id="loginVue" class="clearfix">
-    <div class="loginDiv clearfix">
-      <p class="pass-form-logo">用户名密码登录</p>
-      <div style="margin-top: 60px"></div>
-      <el-form label-position="top" ref="form" :model="form" label-width="80px" :rules="rules">
-        <el-form-item prop="name">
-          <el-input v-model="form.name" placeholder="手机/邮箱/用户名"></el-input>
-        </el-form-item>
-        <el-form-item prop="pass">
-          <el-input type="password" v-model="form.pass" autocomplete="off" placeholder="密码"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="submit('form')" style="width: 100%;">登录</el-button>
-        </el-form-item>
-      </el-form>
-
-    </div>
-    <div id="tang-pass-footerBar">
-      <router-link to="/admin/forget-password">
-        <a class="forget-password btn">忘记密码</a>
-      </router-link>
-      <router-link to="/admin/reg-link">
-        <a class="reg-link btn">立即注册</a>
-      </router-link>
-    </div>
+  <div id="loginDiv" class="clearfix">
+    <p class="pass-form-logo">用户名密码登录</p>
+    <div style="margin-top: 60px"></div>
+    <el-form label-position="top" ref="form" :model="form" label-width="80px" :rules="rules">
+      <el-form-item prop="name">
+        <el-input v-model="form.name" placeholder="手机/邮箱/用户名"></el-input>
+      </el-form-item>
+      <el-form-item prop="pass">
+        <el-input type="password" v-model="form.pass" autocomplete="off" placeholder="密码"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <div class="footer-desc">
+          <el-button type="primary" @click="submit('form')" style="width: 50%;">登录</el-button>
+          <el-button type="primary" @click="reset('form')" style="width: 50%;">重置</el-button>
+        </div>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <script>
 import {mapMutations} from 'vuex'
-import qs from "qs";
 
 export default {
   name: "login",
-  props: {
-    info: {
-      type: Object,
-      default: () => {
-        return {};
-      }
-    },
-    layerid: {
-      type: String,
-      default: ""
-    },
-  },
   data: function () {
     return {
       form: {
@@ -76,11 +55,11 @@ export default {
                 center: true,
                 duration: 1000
               });
-              // console.log(res.data)
+
               window.sessionStorage.setItem("token", res.data.token);
               window.sessionStorage.setItem("name", res.data.name);
               this.login() //提交登录标记
-              this.$layer.close(this.layerid)
+              this.$emit("closeMyDialog")
             } else if (res.data === "") {
               this.$message.error({
                 message: '用户名或者密码出错',
@@ -95,10 +74,11 @@ export default {
           return false;
         }
       })
-
+    },
+    reset(form) {
+      this.$refs[form].resetFields();
     }
   }
-
 }
 
 </script>

@@ -1,7 +1,9 @@
 <template>
+
   <div id="foot-vue">
         @copyright:xxxxxxxxxxxx
   </div>
+
 </template>
 
 <script>

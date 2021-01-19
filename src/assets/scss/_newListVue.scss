@@ -55,6 +55,9 @@ ul, li, ol {
 }
 
 #n_right {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //white-space: nowrap;
   width: 532px;
 }
 
@@ -72,24 +75,29 @@ ul, li, ol {
 
 .thread-name-wraper {
   position: relative;
-  .title{
+
+  .title {
     position: relative;
-    display: inline-block;
-    font-family: STHeiti,"Microsoft Yahei","Microsoft YaHei",Arial,sans-serif;
+    //display: inline-block;
+    font-family: STHeiti, "Microsoft Yahei", "Microsoft YaHei", Arial, sans-serif;
     font-size: 16px;
     color: #005097;
     text-decoration: none;
+
   }
 }
-.n_text{
+
+.n_text {
   line-height: 24px;
   color: #666;
   font-size: 14px;
   padding: 14px 0 0;
 }
-.img{
+
+.img {
   width: 532px;
-  li{
+
+  li {
     float: left;
     display: inline;
     padding: 0;
@@ -97,11 +105,18 @@ ul, li, ol {
     position: relative;
   }
 }
-.n_reply{
+
+.n_reply {
   padding-top: 10px;
-  .post_author{
+
+  .post_author {
     color: #999;
     padding-left: 18px;
     background: url(//tb2.bdstatic.com/tb/static-spage/img/css1_44fc180.png) no-repeat -198px -69px;
+  }
+  .time{
+    margin-left: 5px;
+    font-family: "Fira Code", cursive;
+    font-weight: bolder;
   }
 }

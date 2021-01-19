@@ -48,7 +48,6 @@ export default {
   },
   created() {
     this.$axios.get("/api/hottie/getHot").then((res) => {
-      console.log(res)
       this.new_list = res.data;
     })
   }
